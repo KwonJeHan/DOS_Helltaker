@@ -1,16 +1,18 @@
 # DOS_Helltaker
 
+**2025/01/23 [포텐업] 게임 개발자 양성 과정**
+
+---
+
 ## 1. 프로젝트 개요
 
 ### 1-1. 구현 게임
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/HelltakerPlay.png">
+![HelltakerMain](../images/DOS_Helltaker/HelltakerMain.jpg)
 
-​								Steam 무료 인디 게임 **HELLTAKER**
+![HelltakerPlay](../images/DOS_Helltaker/HelltakerPlay.png)
 
-
-
-
+Steam 무료 인디 게임 **HELLTAKER**
 
 **게임 장르 : 턴제 퍼즐 어드벤처**
 
@@ -18,8 +20,6 @@
   * 제한된 이동 횟수 내에서 퍼즐 해결
   * 바위 밀기, 스켈레톤 처치, 열쇠/문 시스템, 가시 함정
   * 최종 목표인 악마에게 도달하기
-
-
 
 
 
@@ -31,8 +31,6 @@
 
 
 
-
-
 ### 1-3. 개발 환경
 
 * 사용 언어 : C++
@@ -41,8 +39,6 @@
   * 콘솔 기반 텍스트 그래픽
   * 키보드 입력 지원
   * Windows 콘솔 환경
-
-
 
 
 
@@ -66,8 +62,6 @@
 
 
 
-
-
 ### 2-2 기술적 구현
 
 * 그래픽 처리
@@ -84,231 +78,183 @@
 
 
 
-
-
 ## 3. 개발 과정
 
 #### **이동 횟수 추가 및 게임 오버 추가**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/1.movecount.PNG">
+![1.movecount](../images/DOS_Helltaker/1.movecount.PNG)
 
 moveCount 변수 선언 및 키보드 입력을 받으면 값을 1 씩 증가
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/2.Gameover.PNG">
+![2.Gameover](../images/DOS_Helltaker/2.Gameover.PNG)
 
 moveLimit 값보다 moveCount 값이 더 커지면 true 반환
 
-
-
-
+---
 
 #### **구현되어 있는 액터 로직 변경**
 
- <img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/3-1.stone.PNG">
+![3-1.stone](../images/DOS_Helltaker/3-1.stone.PNG)
 
 바위, 스켈레톤을 밀 때 바위나 해골은 이동하지만 캐릭터는 이동하면 안된다.
 
-
-
-
+---
 
 #### **신규 액터 추가 (스켈레톤, 가시 함정, 열쇠, 문, 악마)**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-1.skeleton.PNG">
+![4-1.skeleton](../images/DOS_Helltaker/4-1.skeleton.PNG)
 
 기존 액터들과 같은 형식으로 추가
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-6.list.PNG">
+![4-6.list](../images/DOS_Helltaker/4-6.list.PNG)
 
 악마는 스테이지 당 1명
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-8.sDraw.PNG">
+![4-8.sDraw](../images/DOS_Helltaker/4-8.sDraw.PNG)
 
 스켈레톤, 열쇠, 문은 바위와 같이 땅 위에 덮어쓰는 형태로 생성
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-9.sDestroy.PNG">
+![4-9.sDestroy](../images/DOS_Helltaker/4-9.sDestroy.PNG)
 
 스켈레톤은 바위와 다르게 밀리는 방향에 이동 불가 장애물이 있을 시 파괴
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-10.gDestroy.PNG">
+![4-10.gDestroy](../images/DOS_Helltaker/4-10.gDestroy.PNG)
 
 문은 열쇠가 있으면 열쇠 개수를 하나 줄이고 사라짐, 없으면 이동 불가
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-11.kDestroy.PNG">
+![4-11.kDestroy](../images/DOS_Helltaker/4-11.kDestroy.PNG)
 
 열쇠는 충돌 시 사라지며 열쇠 개수 하나 증가
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/4-12.spikePosition.PNG">
+![4-12.spikePosition](../images/DOS_Helltaker/4-12.spikePosition.PNG)
 
 가시 함정은 충돌 시 moveCount 값 1 더 증가
 
-
-
-
+---
 
 #### **스테이지 구상 및 txt파일 추가**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/5-1.map1.PNG">           <img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/5-2.map2.PNG">
+![5-1.map1](../images/DOS_Helltaker/5-1.map1.PNG)![5-2.map2](../images/DOS_Helltaker/5-2.map2.PNG)
 
 텍스트 파일에 위와 같이 텍스트 작성
 
-
-
-
+---
 
 #### **스테이지 클리어 및 전환 추가**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/6-1.stageClear.PNG">
+![6-1.stageClear](../images/DOS_Helltaker/6-1.stageClear.PNG)
 
 마지막 스테이지 (현 프로젝트에선 4번째 스테이지)를 클리어 시 lastStage 값이 True로 변경되므로 조건문을 위와 같이 작성
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/6-2.selectStage.PNG">
+![6-2.selectStage](../images/DOS_Helltaker/6-2.selectStage.PNG)
 
 기존에 있던 파일 입출력을 const char* 타입의 인수를 받는 함수로 만들어 switch 문으로 스테이지 전환
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/6-4.gameStage.PNG">
+![6-4.gameStage](../images/DOS_Helltaker/6-4.gameStage.PNG)
 
 GameLevel을 만들 때 SelectStage 함수를 호출
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/6-3.nextStage.PNG">
+![6-3.nextStage](../images/DOS_Helltaker/6-3.nextStage.PNG)
 
 Game 클래스의 NextLevel 함수를 만들고 새로운 레벨 만들기 및 삭제 기능 구현
 
- 
+---
 
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/6-5.stageClear.PNG">
+![6-5.stageClear](../images/DOS_Helltaker/6-5.stageClear.PNG)
 
 스테이지 클리어 시 NextLevel 함수 호출
 
-
-
-
+---
 
 #### **게임 클리어 로직 변경**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/7.gameClear.PNG">
+![7.gameClear](../images/DOS_Helltaker/7.gameClear.PNG)
 
 마지막 스테이지 클리어 시 lastStage가 True로 할당되고 게임 클리어
 
-
-
-
+---
 
 #### **메인 메뉴 추가**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/8.mainMenu.PNG">
+![8.mainMenu](../images/DOS_Helltaker/8.mainMenu.PNG)
 
 Mainmenu 클래스 및 함수 추가
 
+---
 
-
-
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/9.maincpp.PNG">
+![9.maincpp](../images/DOS_Helltaker/9.maincpp.PNG)
 
 Main.cpp 실행 시 new MainLevel을 만들어서 LoadLevel로 호출
 
 
 
-
-
 ## 4. 시연
 
-**메인 메뉴**
+#### **메인 메뉴**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/Mainmenu.gif">
+![Mainmenu](../images/DOS_Helltaker/Mainmenu.gif)
 
+---
 
+#### **바위 충돌**
 
+![Stone](../images/DOS_Helltaker/Stone.gif)
 
+---
 
-**바위 충돌**
+#### **문 충돌**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/Stone.gif">
+![Gate](../images/DOS_Helltaker/Gate.gif)
 
+---
 
+#### **가시 함정, 열쇠 2개 획득**
 
+![SpikeKey](../images/DOS_Helltaker/SpikeKey.gif)
 
+---
 
-**문 충돌**
+#### **스테이지 전환**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/Gate.gif">
+![SelectStage](../images/DOS_Helltaker/SelectStage.gif)
 
+---
 
+#### **1스테이지 클리어**
 
+![1stageClear](../images/DOS_Helltaker/1stageClear.gif)
 
+---
 
-**가시 함정, 열쇠 2개 획득**
+#### **게임 클리어**
 
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/SpikeKey.gif">
+![GameClear](../images/DOS_Helltaker/GameClear.gif)
 
+---
 
+**시연 영상 유튜브 링크**
 
-
-
-**스테이지 전환**
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/SelectStage.gif">
-
-
-
-
-
- **1스테이지 클리어**
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/1stageClear.gif">
-
-
-
-
-
-**게임 클리어**
-
-<img src= "https://github.com/KwonJeHan/CppConsoleGameEngineProject/blob/main/GameProjects/images/Present/GameClear.gif">
-
-
+**https://youtu.be/a_euDOqtRK0**
 
 
 
